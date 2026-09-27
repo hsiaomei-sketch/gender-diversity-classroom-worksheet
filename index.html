@@ -3,132 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="生命教育與社會服務課程：多元性別課堂反思作業">
-  <title>多元性別・課堂反思作業</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%230d7d89' d='M32 4 60 18v28L32 60 4 46V18z'/%3E%3Cpath fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='round' d='M20 25c4-7 20-7 24 0M20 38c4 7 20 7 24 0'/%3E%3C/svg%3E">
+  <meta name="description" content="依據 Exploring Gender Diversity 製作的中文互動學習單">
+  <title>探索性別多元性｜中文學習單</title>
   <style>
-    :root { --ink:#173143; --muted:#586976; --teal:#087e8b; --teal-pale:#e8f5f4; --orange:#ee8b38; --violet:#785083; --line:#dbe5e8; --paper:#fffefb; --bg:#f3f7f7; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; font-size:16px; line-height:1.65; }
-    .shell { width:min(980px, calc(100% - 32px)); margin:0 auto; }
-    header { padding:36px 0 24px; border-bottom:1px solid #cce2e2; background:linear-gradient(120deg,#e5f5f3 0%,#f8fbf8 55%,#fff3e5 100%); overflow:hidden; }
-    .hero { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr); align-items:center; gap:20px; }
-    .hero-art { width:100%; max-width:430px; justify-self:end; display:block; filter:drop-shadow(0 16px 20px #1731431a); }
-    .eyebrow { color:var(--teal); font-size:.9rem; font-weight:800; letter-spacing:.08em; margin:0 0 10px; }
-    h1 { font-size:clamp(2rem,5vw,3.45rem); line-height:1.1; margin:0; letter-spacing:.02em; }
-    .intro { max-width:700px; margin:18px 0 0; font-size:1.1rem; }
-    main { padding:30px 0 64px; }
-    .notice { padding:18px 20px; border-left:5px solid var(--orange); background:#fff7eb; border-radius:0 12px 12px 0; margin-bottom:24px; }
-    .notice strong { display:block; margin-bottom:3px; }
-    .teacher-panel { background:#edf7fa; border:1px solid #bcdce3; border-radius:14px; margin:0 0 20px; overflow:hidden; }
-    .teacher-panel summary { cursor:pointer; padding:13px 16px; color:#15596b; font-weight:800; }
-    .teacher-panel > div { padding:4px 16px 18px; border-top:1px solid #cfe3e8; }
-    .teacher-panel p { color:var(--muted); font-size:.92rem; }
-    .teacher-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
-    .secondary { background:#fff; border:1px solid #91b8c2; color:#15596b; }
-    .secondary:hover { background:#dceff3; }
-    #classMeta { color:#315c69; font-weight:700; margin-top:8px; }
-    .tracker { display:flex; align-items:center; gap:14px; margin:0 0 24px; padding:14px 16px; background:white; border:1px solid var(--line); border-radius:14px; position:sticky; top:10px; z-index:2; box-shadow:0 5px 20px #1731430d; }
-    progress { flex:1; height:10px; accent-color:var(--teal); }
-    #progressText { white-space:nowrap; font-size:.9rem; font-weight:700; color:var(--muted); }
-    form { display:grid; gap:22px; }
-    .card { background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:clamp(20px,4vw,34px); box-shadow:0 10px 24px #17314308; }
-    .section-kicker { color:var(--teal); font-size:.85rem; font-weight:800; letter-spacing:.08em; margin:0 0 4px; }
-    h2 { margin:0 0 10px; font-size:clamp(1.3rem,3vw,1.75rem); line-height:1.3; }
-    h3 { font-size:1.05rem; margin:20px 0 8px; }
-    p { margin:8px 0; }
-    .muted { color:var(--muted); }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-    label { display:block; font-weight:700; }
-    input, textarea { display:block; width:100%; font:inherit; color:var(--ink); background:#fff; border:1px solid #b8c9cf; border-radius:10px; padding:11px 12px; margin-top:6px; transition:border .2s,box-shadow .2s; }
-    input:focus, textarea:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px #087e8b24; }
-    textarea { min-height:125px; resize:vertical; }
-    .dimensions { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:18px; }
-    .dimension { padding:14px 12px; border-radius:13px; min-height:126px; border:1px solid var(--line); }
-    .dimension b { display:block; font-size:.98rem; line-height:1.35; margin-bottom:8px; }
-    .dimension span { display:block; color:var(--muted); font-size:.88rem; line-height:1.48; }
-    .identity { background:#eaf6ea; border-color:#bbdfbd; }.physical { background:#f8eef8; border-color:#dec5e1; }.expression { background:#fff5e8; border-color:#f0d0a5; }.norms { background:#edf7fa; border-color:#bcdce3; }.perception { background:#eff5fc; border-color:#c6d9ee; }
-    .choice-row { display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 14px; }
-    .choice-row label { border:1px solid #b8c9cf; border-radius:999px; padding:8px 12px; font-weight:600; cursor:pointer; }
-    .choice-row input { display:inline; width:auto; margin:0 5px 0 0; accent-color:var(--teal); }
-    .prompt { border-top:1px dashed #bfd1d4; margin-top:22px; padding-top:18px; }
-    .actionbar { display:flex; justify-content:space-between; align-items:center; gap:18px; background:#173143; color:#fff; border-radius:18px; padding:22px 26px; }
-    .actionbar p { margin:0; color:#dbe9ec; font-size:.92rem; }
-    button { appearance:none; border:0; background:#f3ad55; color:#1c3442; font:inherit; font-weight:800; border-radius:10px; padding:12px 18px; cursor:pointer; white-space:nowrap; }
-    button:hover { background:#ffc375; }
-    .source { margin-top:28px; color:var(--muted); font-size:.87rem; border-top:1px solid var(--line); padding-top:18px; }
-    .source a { color:#176b87; }
-    @media (max-width:720px) { header { padding-top:28px; } .hero { grid-template-columns:1fr; } .hero-art { width:min(100%,380px); justify-self:center; margin-top:-4px; } .grid { grid-template-columns:1fr; } .dimensions { grid-template-columns:1fr 1fr; } .dimension:last-child { grid-column:span 2; } .actionbar { align-items:flex-start; flex-direction:column; } .tracker { top:4px; } }
-    @media print { body { background:#fff; } header { padding:20px 0; } .tracker,.actionbar,.teacher-panel { display:none; } main { padding:16px 0; } .card { break-inside:avoid; box-shadow:none; } textarea { min-height:90px; } }
+    :root{--ink:#193042;--muted:#5d6a74;--green:#23844d;--purple:#80527b;--gold:#d99117;--blue:#277f9c;--paper:#fffefa;--bg:#edf5f5;--line:#d4e1e3}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}.wrap{width:min(1050px,calc(100% - 32px));margin:auto}header{background:#fff;padding:36px 0 28px;border-bottom:7px solid var(--blue)}.kicker{margin:0;color:var(--green);font-weight:800;letter-spacing:.08em}.top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}h1{margin:4px 0 8px;font-size:clamp(2rem,5vw,3.35rem);line-height:1.15}header p:last-child{margin:0;color:var(--muted);max-width:720px}.source-badge{border:1px solid #b8d3db;border-radius:12px;padding:8px 12px;color:var(--blue);font-weight:800;font-size:.82rem;white-space:nowrap}main{padding:28px 0 54px}.notice{background:#fff7e9;border-left:5px solid var(--gold);padding:14px 17px;margin:0 0 22px;border-radius:0 12px 12px 0}.notice b{display:block}.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:clamp(20px,4vw,34px);box-shadow:0 10px 28px #1930420a;margin:20px 0}.page-title{display:flex;align-items:center;gap:12px;margin:0 0 8px}.page-num{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800}.page-title h2{font-size:1.5rem;margin:0}.intro{color:var(--muted);margin:0 0 20px}.spheres{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.sphere{border:3px solid var(--tone);border-radius:50%;min-height:350px;padding:28px 20px 22px;background:var(--soft);display:flex;flex-direction:column;align-items:center;text-align:center}.sphere h3{color:var(--tone);font-size:1.42rem;margin:0 0 2px}.sphere .lead{margin:0 0 18px;font-weight:800}.option-list{display:grid;gap:9px;width:100%;margin:auto 0}.option{display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid color-mix(in srgb,var(--tone) 35%,white);background:#fffdfbd9;border-radius:999px;padding:8px 10px;cursor:pointer;font-weight:700;line-height:1.35}.option:has(input:checked){background:var(--tone);color:#fff;border-color:var(--tone)}.option input{accent-color:var(--tone)}.identity{--tone:var(--green);--soft:#ecf8ed}.physical{--tone:var(--purple);--soft:#f8eff8}.expression{--tone:var(--gold);--soft:#fff7e8}.skip{font-size:.85rem;color:var(--muted);margin-top:13px}.skip label{cursor:pointer}.concepts{display:grid;gap:14px}.concept{border:2px solid var(--tone);border-radius:15px;padding:20px 22px;background:var(--soft)}.concept h3{color:var(--tone);font-size:1.45rem;margin:0 0 8px}.concept p{margin:6px 0}.concept b{color:var(--ink)}.society{--tone:var(--blue);--soft:#eef8fb}.action{display:flex;justify-content:space-between;align-items:center;gap:18px;background:var(--ink);color:#fff;padding:22px 25px;border-radius:17px}.action p{margin:0;color:#d9e7e9;font-size:.92rem;max-width:620px}button{border:0;border-radius:10px;padding:12px 17px;background:#f2b353;color:#173042;font:inherit;font-weight:800;cursor:pointer;white-space:nowrap}button:hover{background:#ffd080}.citation{border-top:1px solid var(--line);margin-top:30px;padding:19px 0 0;color:var(--muted);font-size:.88rem}.citation strong{color:var(--ink)}@media(max-width:760px){header{padding:28px 0 22px}.top{display:block}.source-badge{display:inline-block;margin-top:15px}.spheres{grid-template-columns:1fr}.sphere{border-radius:20px;min-height:0;padding:24px 18px}.option-list{margin:8px 0}.action{align-items:flex-start;flex-direction:column}}@media print{body{background:#fff}.card{box-shadow:none}.notice,.action{display:none}.sphere{min-height:275px}}
   </style>
 </head>
 <body>
-  <header><div class="shell hero">
-    <div><p class="eyebrow" id="courseLabel">生命教育與社會服務｜課堂作業</p>
-      <h1 id="worksheetTitle">看見多元，練習尊重</h1>
-      <p class="intro">用五個面向理解性別經驗，並思考我們如何在日常互動中，讓每個人都感到被尊重與安全。</p></div>
-    <img class="hero-art" src="learning-circle.png" alt="四位背景不同的大學生圍坐交流與學習">
-  </div></header>
-  <main class="shell">
-    <aside class="notice"><strong>安全提醒</strong>這是一份理解與反思作業，不需要揭露你的性別認同、身體特徵或任何私人經驗。請自由選擇你願意分享的範圍，也請以尊重、不猜測他人身分的方式完成作答。</aside>
-    <details class="teacher-panel"><summary>教師設定（分享前可自訂）</summary><div>
-      <p>設定會先儲存在你目前的瀏覽器。按「下載分享版」可取得已寫入課程資訊的 HTML 檔，再上傳到 GitHub Pages 或傳給學生。</p>
-      <div class="grid"><label>課程名稱<input id="teacherCourse" placeholder="生命教育與社會服務"></label><label>作業標題<input id="teacherTitle" placeholder="看見多元，練習尊重"></label><label>繳交期限<input id="teacherDue" placeholder="例如：10 月 7 日 23:59"></label><label>繳交方式<input id="teacherSubmit" placeholder="例如：下載文字檔後上傳至課程平台"></label></div>
-      <p id="classMeta"></p><div class="teacher-actions"><button type="button" class="secondary" id="downloadTeacher">下載已設定的分享版 HTML</button><button type="button" class="secondary" id="resetTeacher">還原預設設定</button></div>
-    </div></details>
-    <div class="tracker"><progress id="progress" value="0" max="5"></progress><span id="progressText">0 / 5 題已填寫</span></div>
-    <form id="worksheet">
-      <section class="card">
-        <p class="section-kicker">開始前</p><h2>基本資料</h2>
-        <div class="grid"><label>姓名或代號<input data-track name="student" placeholder="可填代號"></label><label>班級／日期<input data-track name="classDate" placeholder="例如：生教一甲／9.26"></label></div>
-      </section>
-      <section class="card">
-        <p class="section-kicker">概念地圖</p><h2>性別不是單一項目</h2>
-        <p class="muted">以下面向彼此相關，但不會由其中一項自動推論其他項。請先閱讀，再用自己的話寫下你最想記住的一個觀念。</p>
-        <div class="dimensions">
-          <div class="dimension identity"><b>性別認同</b><span>一個人對自己性別的內在理解。</span></div>
-          <div class="dimension physical"><b>身體性別</b><span>身體發展與性徵的多樣性。</span></div>
-          <div class="dimension expression"><b>性別表現</b><span>透過服裝、聲音、舉止、名字或代名詞等表達自己。</span></div>
-          <div class="dimension norms"><b>性別規範</b><span>社會對不同性別的期待、分類與角色想像。</span></div>
-          <div class="dimension perception"><b>性別觀感</b><span>他人如何解讀一個人的性別；這不一定等於當事人的認同。</span></div>
-        </div>
-        <div class="prompt"><label>1. 從五個面向中，選一個你最想記住的觀念；用自己的話說明它如何幫助我們不急著判斷他人。<textarea data-answer name="takeaway" placeholder="例如：我發現不該只根據外表推斷一個人的性別……"></textarea></label></div>
-      </section>
-      <section class="card">
-        <p class="section-kicker">拆解假設</p><h2>從情境練習不急著判斷</h2>
-        <p>小安剛轉到新班級，穿著中性風格、說話輕柔。有人在背後議論：「他／她到底是男生還是女生？」</p>
-        <div class="prompt"><label>2. 這段議論把哪些不同面向混在一起了？若你在現場，可以怎麼回應？<textarea data-answer name="assumptions" placeholder="提示：可從性別認同、性別表現、他人觀感等面向思考，並寫出一句具體回應。"></textarea></label></div>
-      </section>
-      <section class="card">
-        <p class="section-kicker">生活觀察</p><h2>性別規範在哪裡出現？</h2>
-        <div class="prompt"><label>3. 請舉一個常見的性別規範或刻板印象；它如何影響人的尊嚴、參與感或被公平對待的機會？<textarea data-answer name="norms" placeholder="可來自媒體、校園、家庭或職場；不需要寫真人姓名或私人故事。"></textarea></label></div>
-        <div class="prompt"><label>4. 服務他人時，為什麼不應憑外表或他人說法猜測對方的性別？請提出一個更尊重的做法。<textarea data-answer name="perception" placeholder="可思考稱呼、詢問方式、分組或提供協助時的做法。"></textarea></label></div>
-      </section>
-      <section class="card">
-        <p class="section-kicker">服務行動</p><h2>把尊重放進日常</h2>
-        <p>選一個你在課堂、社團、服務場域或線上社群中做得到的小行動。</p>
-        <div class="choice-row"><label><input type="radio" name="actionType" value="語言">語言與稱呼</label><label><input type="radio" name="actionType" value="互動方式">互動方式</label><label><input type="radio" name="actionType" value="空間／制度">空間／制度</label><label><input type="radio" name="actionType" value="其他">其他</label></div>
-        <label>5. 我的具體行動是：<textarea data-answer name="action" placeholder="例如：不以外表猜測稱謂；不把性別當作玩笑；在分組時避免以二分性別分隊……"></textarea></label>
-      </section>
-      <div class="actionbar"><p>填寫內容只會保留在你目前的瀏覽器中。完成後可下載文字檔，或列印成 PDF 交作業。</p><button type="button" id="download">下載我的作業（.txt）</button></div>
-    </form>
-    <footer class="source"><strong>資料來源引註：</strong>本作業概念改編自 Trans Care BC, <em>Exploring Gender Diversity</em>（使用者提供之〈多元性別.pdf〉，頁 1–2）；原始資料標示 Trans Care BC Provincial Health Services Authority，角色插圖 Drawing Change。作業文字為課堂教學改寫，旨在促進理解與尊重。</footer>
-  </main>
-  <script>
-    const defaultTeacher={course:'生命教育與社會服務',title:'看見多元，練習尊重',due:'',submission:''};
-    const teacherInputs={course:document.querySelector('#teacherCourse'),title:document.querySelector('#teacherTitle'),due:document.querySelector('#teacherDue'),submission:document.querySelector('#teacherSubmit')};
-    function teacherValue(){return Object.fromEntries(Object.entries(teacherInputs).map(([key,input])=>[key,input.value.trim()]));}
-    function renderTeacher(){const config=teacherValue(); document.querySelector('#courseLabel').textContent=`${config.course||defaultTeacher.course}｜課堂作業`;document.querySelector('#worksheetTitle').textContent=config.title||defaultTeacher.title;document.title=`${config.title||defaultTeacher.title}・課堂作業`; const lines=[];if(config.due)lines.push(`繳交期限：${config.due}`);if(config.submission)lines.push(`繳交方式：${config.submission}`);document.querySelector('#classMeta').textContent=lines.join('　');localStorage.setItem('gender-diversity-teacher',JSON.stringify(config));}
-    const storedTeacher={...defaultTeacher,...JSON.parse(localStorage.getItem('gender-diversity-teacher')||'{}')};Object.entries(storedTeacher).forEach(([key,value])=>teacherInputs[key].value=value);Object.values(teacherInputs).forEach(input=>input.addEventListener('input',renderTeacher));renderTeacher();
-    document.querySelector('#resetTeacher').addEventListener('click',()=>{Object.entries(defaultTeacher).forEach(([key,value])=>teacherInputs[key].value=value);renderTeacher();});
-    document.querySelector('#downloadTeacher').addEventListener('click',()=>{const config=JSON.stringify(teacherValue());const html=document.documentElement.outerHTML.replace(/const defaultTeacher=\{.*?\};/,`const defaultTeacher=${config};`);const url=URL.createObjectURL(new Blob(['<!doctype html>\n'+html],{type:'text/html;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='多元性別課堂作業-分享版.html';a.click();URL.revokeObjectURL(url);});
-    const tracks=[...document.querySelectorAll('[data-answer]')], progress=document.querySelector('#progress'), progressText=document.querySelector('#progressText');
-    function update(){const n=tracks.filter(x=>x.value.trim()).length; progress.value=n; progressText.textContent=`${n} / 5 題已填寫`; localStorage.setItem('gender-diversity-worksheet',JSON.stringify(Object.fromEntries(new FormData(document.querySelector('#worksheet')))));}
-    const saved=JSON.parse(localStorage.getItem('gender-diversity-worksheet')||'{}');
-    Object.entries(saved).forEach(([key,value])=>{const e=document.querySelector(`[name="${key}"][value="${CSS.escape(value)}"]`)||document.querySelector(`[name="${key}"]`); if(e){if(e.type==='radio') e.checked=true; else e.value=value;}});
-    document.querySelector('#worksheet').addEventListener('input',update); document.querySelector('#worksheet').addEventListener('change',update); update();
-    document.querySelector('#download').addEventListener('click',()=>{const data=new FormData(document.querySelector('#worksheet')); const labels={student:'姓名或代號',classDate:'班級／日期',takeaway:'1. 不急著判斷',assumptions:'2. 情境中的尊重回應',norms:'3. 性別規範與人的尊嚴',perception:'4. 服務中的尊重做法',actionType:'行動類型',action:'5. 我的具體行動'}; let out=`${document.querySelector('#worksheetTitle').textContent}\n${document.querySelector('#courseLabel').textContent}\n${document.querySelector('#classMeta').textContent}\n\n`; for(const [key,label] of Object.entries(labels)) out+=`${label}\n${data.get(key)||'（未填寫）'}\n\n`; out+='資料來源引註：Trans Care BC, Exploring Gender Diversity（使用者提供之〈多元性別.pdf〉，頁 1–2）。\n'; const url=URL.createObjectURL(new Blob([out],{type:'text/plain;charset=utf-8'})); const a=document.createElement('a'); a.href=url;a.download='多元性別課堂作業.txt';a.click();URL.revokeObjectURL(url);});
-  </script>
-</body>
-</html>
+<header><div class="wrap"><div class="top"><div><p class="kicker">中文互動學習單</p><h1>探索性別多元性</h1><p>依三個不同面向理解自己與他人的性別經驗。每一個面向都可以有一個、多個或沒有想標記的地方。</p></div><div class="source-badge">Exploring Gender Diversity<br>Trans Care BC</div></div></div></header>
+<main class="wrap">
+  <aside class="notice"><b>填寫提醒</b>原文件說明：「在每一個範圍中，標記最貼近自己的區域；可以是一個點、一個較大的範圍或多個區域，一切由你決定。」本網頁以複選方式呈現；你也可以選擇略過任何一個面向。</aside>
+  <form id="worksheet">
+    <section class="card"><div class="page-title"><span class="page-num">1</span><h2>三個面向：選擇最貼近你的區域</h2></div><p class="intro">勾選不限數量；這不是測驗，也沒有標準答案。</p>
+      <div class="spheres">
+        <fieldset class="sphere identity"><h3>性別認同</h3><p class="lead">我是……</p><div class="option-list"><label class="option"><input type="checkbox" name="identity" value="女性／女孩">女性／女孩</label><label class="option"><input type="checkbox" name="identity" value="男性／男孩">男性／男孩</label><label class="option"><input type="checkbox" name="identity" value="非二元">非二元</label><label class="option"><input type="checkbox" name="identity" value="性別流動／雙性別">性別流動／雙性別</label><label class="option"><input type="checkbox" name="identity" value="無性別">無性別</label></div><p class="skip"><label><input type="checkbox" name="identity" value="選擇略過"> 選擇略過此面向</label></p></fieldset>
+        <fieldset class="sphere physical"><h3>身體性別</h3><p class="lead">我的身體發展……</p><div class="option-list"><label class="option"><input type="checkbox" name="physical" value="女性">女性</label><label class="option"><input type="checkbox" name="physical" value="男性">男性</label><label class="option"><input type="checkbox" name="physical" value="性別發展差異">性別發展差異</label><label class="option"><input type="checkbox" name="physical" value="可見的性別發展差異">可見的性別發展差異</label><label class="option"><input type="checkbox" name="physical" value="不易察覺的性別發展差異">不易察覺的性別發展差異</label></div><p class="skip"><label><input type="checkbox" name="physical" value="選擇略過"> 選擇略過此面向</label></p></fieldset>
+        <fieldset class="sphere expression"><h3>性別表現</h3><p class="lead">我的表現是……</p><div class="option-list"><label class="option"><input type="checkbox" name="expression" value="女性化">女性化</label><label class="option"><input type="checkbox" name="expression" value="男性化">男性化</label><label class="option"><input type="checkbox" name="expression" value="中性化">中性化</label><label class="option"><input type="checkbox" name="expression" value="鮮明／流動">鮮明／流動</label><label class="option"><input type="checkbox" name="expression" value="低調／沒有">低調／沒有</label></div><p class="skip"><label><input type="checkbox" name="expression" value="選擇略過"> 選擇略過此面向</label></p></fieldset>
+      </div>
+    </section>
+    <section class="card"><div class="page-title"><span class="page-num">2</span><h2>概念說明</h2></div><p class="intro">以下為原文件第二頁內容的中文翻譯。</p><div class="concepts">
+      <article class="concept identity"><h3>性別認同</h3><p>一個人對自己性別的核心理解。</p><p><b>跨性別／Trans：</b>指一個人的性別認同與出生時被指定的性別不相符。</p></article>
+      <article class="concept physical"><h3>身體性別</h3><p>一個人的身體在一生中的發展與變化，可能受到性染色體、荷爾蒙、生殖器官、第二性徵、相關醫療照護等影響。</p><p><b>性別發展差異（DSD）：</b>約有 1.7% 的人出生時帶有不完全落在一般被指定為「女性」或「男性」範圍內的性別發展差異。</p></article>
+      <article class="concept expression"><h3>性別表現</h3><p>一個人傳達其性別的所有方式，包括服裝、聲音、舉止、名字、代名詞等。</p><p>性別表現的規範會因文化、世代、宗教信仰、地區、社群與同儕群體而異。</p></article>
+      <article class="concept society"><h3>社會因素</h3><p><b>性別規範：</b>社會依據一個人出生時被指定的性別，對其抱持的期待；也包含社會如何對待、分類與區隔人們，例如法律、語言、性別角色、性別刻板印象、服裝、玩具、團隊運動、出生證明與身分文件等。</p><p><b>性別觀感：</b>他人對一個人性別的解讀，常依據習得的偏見（性別規範）與外在訊號，例如性別表現、第二性徵等。不是每個人對同一個人性別的觀感都會相同。</p></article>
+    </div></section>
+    <div class="action"><p>填寫內容只保留在目前的瀏覽器中。你可以下載文字檔交作業；網頁不會傳送或儲存你的作答。</p><button type="button" id="download">下載我的填寫結果（.txt）</button></div>
+  </form>
+  <footer class="citation"><strong>資料來源引註：</strong>Trans Care BC, Provincial Health Services Authority. <em>Exploring Gender Diversity</em>（使用者提供之〈多元性別.pdf〉，第 1–2 頁）。原文件角色插圖標示為 Drawing Change；本網頁將原文翻譯為繁體中文並改作可填寫介面。</footer>
+</main>
+<script>
+  const form=document.querySelector('#worksheet');
+  const saved=JSON.parse(localStorage.getItem('exploring-gender-diversity-zh')||'{}');
+  [...form.querySelectorAll('input[type=checkbox]')].forEach(input=>{if((saved[input.name]||[]).includes(input.value))input.checked=true;});
+  function save(){const data={};[...new FormData(form).entries()].forEach(([key,value])=>(data[key]??=[]).push(value));localStorage.setItem('exploring-gender-diversity-zh',JSON.stringify(data));}form.addEventListener('change',save);
+  document.querySelector('#download').addEventListener('click',()=>{const data=new FormData(form),groups={identity:'性別認同｜我是……',physical:'身體性別｜我的身體發展……',expression:'性別表現｜我的表現是……'};let text='探索性別多元性｜中文學習單\n\n';for(const [key,title] of Object.entries(groups)){const values=data.getAll(key);text+=`${title}\n${values.length?values.join('、'):'（未填寫）'}\n\n`;}text+='資料來源：Trans Care BC, Exploring Gender Diversity（使用者提供之〈多元性別.pdf〉，第 1–2 頁）。\n';const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='探索性別多元性-填寫結果.txt';a.click();URL.revokeObjectURL(url);});
+</script>
+</body></html>
